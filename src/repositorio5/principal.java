@@ -53,34 +53,47 @@ public class principal extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("DESCUENTOS DE SU SALDO BASE");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 230, 30));
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("DIGITE SU SUELDO BASE: ");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 130, 30));
-        jPanel2.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 170, 30));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 140, 30));
+        jPanel2.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 190, 30));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("DESCUENTO POR LEY DE POLITICA PUBLICA: ");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 134, 230, 30));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 134, 260, 30));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("DESCUENTO POR SEGURO SOCIAL :");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 190, 30));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 210, 30));
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("DESCUENTO POR SEGURO FORZOSO: ");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 200, 30));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 220, 30));
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setText("DESCUENTO POR CAJA DE AHORRO: ");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 200, 30));
-        jPanel2.add(txtresultado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 150, 30));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 210, 30));
 
+        txtresultado1.setEditable(false);
+        jPanel2.add(txtresultado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 160, 30));
+
+        txtresultado2.setEditable(false);
         txtresultado2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtresultado2ActionPerformed(evt);
             }
         });
-        jPanel2.add(txtresultado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 180, 30));
-        jPanel2.add(txtresultado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 180, 30));
-        jPanel2.add(txtresultado4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 180, 30));
+        jPanel2.add(txtresultado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 190, 30));
+
+        txtresultado3.setEditable(false);
+        jPanel2.add(txtresultado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 190, 30));
+
+        txtresultado4.setEditable(false);
+        jPanel2.add(txtresultado4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, 190, 30));
 
         cmdcalcular.setText("CALCULAR");
         cmdcalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -98,15 +111,17 @@ public class principal extends javax.swing.JFrame {
         });
         jPanel2.add(cmdborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setText("MONTO TOTAL A PAGAR: ");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 180, 30));
 
+        txtresultadof.setEditable(false);
         txtresultadof.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtresultadofActionPerformed(evt);
             }
         });
-        jPanel2.add(txtresultadof, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 190, 30));
+        jPanel2.add(txtresultadof, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 200, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 460));
 
