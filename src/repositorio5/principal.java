@@ -5,6 +5,8 @@
  */
 package repositorio5;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -60,6 +62,17 @@ public class principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("DIGITE SU SUELDO BASE: ");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 140, 30));
+
+        txtvalor1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtvalor1ActionPerformed(evt);
+            }
+        });
+        txtvalor1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtvalor1KeyTyped(evt);
+            }
+        });
         jPanel2.add(txtvalor1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 190, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -137,45 +150,66 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtresultadofActionPerformed
 
     private void cmdcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdcalcularActionPerformed
-        double sueldob,d1,d2,d3,d4,montof,td;
-        
-        sueldob = Double.parseDouble(txtvalor1.getText());
-        
-        d1 = (sueldob * 1) / 100;
-        
-        d2 = (sueldob * 4) / 100;
-        
-        d3 = (sueldob * 0.5) / 100;
-        
-        d4 = (sueldob * 5) / 100;
-        
-        td= d1 + d2 + d3 + d4;
-        
-        montof = sueldob - td;
-        
-        txtresultado1.setText(String.valueOf(d1));
-        txtresultado2.setText(String.valueOf(d2));
-        txtresultado3.setText(String.valueOf(d3));
-        txtresultado4.setText(String.valueOf(d4));
-        txtresultadof.setText(String.valueOf(montof));
-        
-        
-        
-        
-        
+        double sueldob, d1, d2, d3, d4, montof, td;
+
+        if (txtvalor1.getText().trim().isEmpty()) {
+            JOptionPane.showConfirmDialog(this, "Digite su sueldo base", "Error", JOptionPane.ERROR_MESSAGE);
+            txtvalor1.requestFocusInWindow();
+            txtvalor1.selectAll();
+
+        } else {
+            sueldob = Double.parseDouble(txtvalor1.getText());
+
+            if (sueldob == 0) {
+                JOptionPane.showMessageDialog(this, "Ingrese un sueldo diferente de 0", "Error", JOptionPane.ERROR_MESSAGE);
+                txtvalor1.requestFocusInWindow();
+                txtvalor1.selectAll();
+            } else {
+
+                d1 = (sueldob * 1) / 100;
+
+                d2 = (sueldob * 4) / 100;
+
+                d3 = (sueldob * 0.5) / 100;
+
+                d4 = (sueldob * 5) / 100;
+
+                td = d1 + d2 + d3 + d4;
+
+                montof = sueldob - td;
+
+                txtresultado1.setText(String.valueOf(d1));
+                txtresultado2.setText(String.valueOf(d2));
+                txtresultado3.setText(String.valueOf(d3));
+                txtresultado4.setText(String.valueOf(d4));
+                txtresultadof.setText(String.valueOf(montof));
+            }
+        }
     }//GEN-LAST:event_cmdcalcularActionPerformed
 
     private void cmdborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborrarActionPerformed
-       txtvalor1.setText("");
-       txtresultado1.setText("");
-       txtresultado2.setText("");
-       txtresultado3.setText("");
-       txtresultado4.setText("");
-       txtresultadof.setText("");
-       
-       txtvalor1.requestFocusInWindow();
-       
+        txtvalor1.setText("");
+        txtresultado1.setText("");
+        txtresultado2.setText("");
+        txtresultado3.setText("");
+        txtresultado4.setText("");
+        txtresultadof.setText("");
+
+        txtvalor1.requestFocusInWindow();
+
     }//GEN-LAST:event_cmdborrarActionPerformed
+
+    private void txtvalor1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtvalor1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtvalor1ActionPerformed
+
+    private void txtvalor1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalor1KeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtvalor1KeyTyped
 
     /**
      * @param args the command line arguments
